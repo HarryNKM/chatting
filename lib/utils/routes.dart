@@ -1,6 +1,7 @@
 
 import 'package:chat2/screen/home/view/home_screen.dart';
 import 'package:chat2/screen/login/view/signup_screen.dart';
+import 'package:chat2/screen/profile/view/profile_screen.dart';
 import 'package:chat2/screen/splash/view/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -13,4 +14,5 @@ Map<String,WidgetBuilder>app_routes={
   'signup':(context)=>const SignupScreen(),
   'signin':(context)=>const SigninScreen(),
   'home':(context)=>const HomeScreen(),
+  'profile':(context)=>const ProfileScreen(),
 };

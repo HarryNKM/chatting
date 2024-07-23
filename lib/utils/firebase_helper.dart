@@ -7,6 +7,7 @@ class FirebaseHelper
   FirebaseAuth auth=FirebaseAuth.instance;
   static FirebaseHelper helper=FirebaseHelper._();
   FirebaseHelper._();
+  User? user;
 
   Future<void> signUp(email,password)
   async {
@@ -41,7 +42,7 @@ class FirebaseHelper
   }
   bool checkUser()
   {
-    User? user= auth.currentUser;
+    user= auth.currentUser;
     return user!= null;
   }
 
@@ -56,5 +57,9 @@ class FirebaseHelper
     );
 
     return await auth.signInWithCredential(credential);
+  }
+  Future<void> signOut()
+  async {
+   await FirebaseAuth.instance.signOut();
   }
 }
