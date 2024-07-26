@@ -9,7 +9,6 @@ void main() {
   runApp(
      GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'profile',
       routes: app_routes,
     ),
   );
