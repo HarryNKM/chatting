@@ -1,4 +1,6 @@
 import 'package:chat2/screen/profile/controller/profile_controller.dart';
+import 'package:chat2/screen/profile/model/profile_model.dart';
+import 'package:chat2/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 
@@ -87,6 +89,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               InkWell(onTap: () {
                 if(formKey.currentState!.validate())
                   {
+                    ProfileModel m1=ProfileModel(
+                      mobile: txtPhone.text,
+                      email: txtEmail.text,
+                      name: txtName.text,
+                    );
+                    FirestoreHelper.helper.setUser(m1);
                   }
                 Get.toNamed('home');
               }, child: Image.asset("assets/img/Button.png"),),

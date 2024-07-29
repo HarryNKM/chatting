@@ -7,7 +7,8 @@ class ProfileController extends GetxController
   RxList<ProfileModel> l1= <ProfileModel>[].obs;
   Future<void> getData()
   async {
-    final data=await FirestoreHelper.helper.getAllUsers();
+    List<ProfileModel>? data= await FirestoreHelper.helper.getAllUsers();
     l1.value=data as List<ProfileModel>;
+
   }
 }

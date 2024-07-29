@@ -1,4 +1,5 @@
 import 'package:chat2/screen/profile/controller/profile_controller.dart';
+import 'package:chat2/utils/firestore_helper.dart';
 import 'package:flutter/material.dart';
 
 class UsersScreen extends StatefulWidget {
@@ -15,6 +16,7 @@ class _UsersScreenState extends State<UsersScreen> {
     // TODO: implement initState
     super.initState();
     controller.getData();
+    FirestoreHelper.helper.getAllUsers();
   }
 
   @override
@@ -29,8 +31,9 @@ class _UsersScreenState extends State<UsersScreen> {
           style: TextStyle(color: Colors.white),
         ),
       ),
+
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: controller.l1.length,
         itemBuilder: (context, index) {
           return Column(
             children: [
@@ -40,9 +43,10 @@ class _UsersScreenState extends State<UsersScreen> {
                   Navigator.pushNamed(context, 'chat');
                 },
                 leading: CircleAvatar(),
-                title: Text("Harry"),
+                title: Text("${controller.l1[index].name}"),
                 subtitle: Text("9173719691"),
               ),
+
             ],
           );
         },

@@ -109,7 +109,7 @@ class _SigninScreenState extends State<SigninScreen> {
                       if(formkey.currentState!.validate())
                       {
                         FirebaseHelper.helper.signIn(txtEmail.text, txtPass.text);
-                        Navigator.pushNamed(context, 'home');
+                        Navigator.pushNamed(context, 'profile');
                       }
 
                     },

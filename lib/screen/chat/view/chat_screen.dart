@@ -14,32 +14,31 @@ class _ChatScreenState extends State<ChatScreen> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.white),
         backgroundColor: Colors.blue.shade700,
-        title: const Row(
-          children: [
-            CircleAvatar(),
-            SizedBox(
-              width: 15,
-            ),
-            Text(
-              "Harry",
-              style: TextStyle(color: Colors.white),
-            ),
-          ],
+        title: ListTile(
+          onTap: () {
+            Navigator.pushNamed(context, 'userdetail');
+          },
+          leading: CircleAvatar(),
+          title: Text(
+            "Harry",
+            style: TextStyle(
+                color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+          ),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.call),
+            icon: const Icon(Icons.call),
           ),
           IconButton(
             onPressed: () {},
-            icon: Icon(Icons.video_call),
+            icon: const Icon(Icons.video_call),
           )
         ],
       ),
       body: Column(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Container(
@@ -50,7 +49,7 @@ class _ChatScreenState extends State<ChatScreen> {
               color: Colors.blueAccent,
               borderRadius: BorderRadius.circular(12),
             ),
-            child: Text(
+            child: const Text(
               "Today",
               style: TextStyle(color: Colors.white),
             ),
@@ -66,7 +65,7 @@ class _ChatScreenState extends State<ChatScreen> {
                   width: MediaQuery.sizeOf(context).width,
                   child: Container(
                     alignment: Alignment.center,
-                    margin: EdgeInsets.all(12),
+                    margin: const EdgeInsets.all(12),
                     height: 40,
                     width: 120,
                     decoration: BoxDecoration(
@@ -74,8 +73,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Text(
-                      index % 2 == 0 ? "ha" : "hm",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      index % 2 == 0 ? "haaa" : "haa",
+                      style: const TextStyle(color: Colors.white, fontSize: 18),
                     ),
                   ),
                 );
@@ -84,24 +83,25 @@ class _ChatScreenState extends State<ChatScreen> {
           ),
           Container(
             height: 70,
-            padding: EdgeInsets.all(8),
-            margin: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
+            margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
             ),
             child: TextFormField(
               decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                hintText: "Message",
+                suffixIcon: IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.send_rounded,
+                    color: Colors.black,
                   ),
-                  hintText: "Message",
-                  suffixIcon: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.send_rounded,
-                      color: Colors.black,
-                    ),
-                  )),
+                ),
+              ),
             ),
           ),
         ],

@@ -23,7 +23,7 @@ class _SplashScreenState extends State<SplashScreen> {
         }
       else
         {
-          Navigator.pushReplacementNamed(context, 'profile');
+          Navigator.pushReplacementNamed(context, 'signin');
         }
     },);
   }
